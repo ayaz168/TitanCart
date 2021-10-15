@@ -1,0 +1,56 @@
+{%extends 'base.html'%} 
+{%block content%}
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Orders</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Order.No</td>
+                        <td class="description">Status</td>
+                        <td class="quantity"></td>
+                        <td class="total">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in orders%}
+                    <tr>
+                        <td class="cart_description">
+                            <h4><a href="">{{i.user}}</a></h4>
+                            <p>ID:PP00X12{{i.id}}</p>
+                        </td>
+                        {% if i.Delivered %}
+                        <td class="cart_total">
+                            <p class="cart_total_price">Delivered</p>
+                        </td>
+                        {% else %}
+                        <td class="cart_total">
+                            <p class="cart_total_price">In Transit.</p>
+                        </td>
+                        {%endif%}
+                        <td class="cart_quantity">
+                            <td class="cart_total">
+                                <p class="cart_total_price">${{ i.delivered_price  }}</p>
+                            </td>
+                        </td>
+                        
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'titanCart:index'%}"><h3>Your Don't Have a Order History.</h3></a> </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section> <!--/#cart_items-->
+{%endblock%}

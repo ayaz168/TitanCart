@@ -1,0 +1,16 @@
+Name: titanCart
+Order Id: PP00X1226
+Already Paid.Just Deliver 
+###################################--ITEMS--###################################
+ID: 15  :  Name: Armani Shirt  :  Price: 75.00  :  Qty: 1
+################################--Delivery Info--#############################
+Recievers Title: Mr.
+Recievers Name: TestName
+Recievers Number: 3481512600
+Recievers Alt. Number: 3481512600
+Recievers Address: Street 58,f7
+Islamabad
+Zip Code: 123456
+Note : call before delivering
+This is a Computer Generated Reciept
+################################--TitanCart--################################

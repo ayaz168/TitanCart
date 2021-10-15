@@ -1,0 +1,16 @@
+Name: titanCart
+Order Id: PP00X1229
+COD::TotalPrice: 75.9
+###################################--ITEMS--###################################
+ID: 2  :  Name: Apple Watch Series 5. 42mm  :  Price: 65.90  :  Qty: 1
+################################--Delivery Info--#############################
+Recievers Title: Mr.
+Recievers Name: Ayaz Afzal
+Recievers Number: 03481512600
+Recievers Alt. Number: 3481512600
+Recievers Address: Street 58,f7, I8/3
+House#403
+Zip Code: 123456
+Note : call before delivering
+This is a Computer Generated Reciept
+################################--TitanCart--################################

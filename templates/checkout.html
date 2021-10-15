@@ -1,0 +1,46 @@
+{%extends 'base.html'%} 
+{%block content%}
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Check out</li>
+            </ol>
+        </div><!--/breadcrums-->
+        <div class="register-req">
+            <p>Please Insert Your Info</p>
+        </div><!--/register-req-->
+        <div class="shopper-informations">
+            <div class="row">
+                <div class="col-sm-5 clearfix">
+                    <div class="bill-to">
+                        <p>Bill To</p>
+                        <div class="form-one">
+                            <form action="checkout" method="POST">
+                                {%csrf_token%}
+                                {{form.Shipping_Name}}
+                                {{form.Title}}
+                                {{form.First_Name}}
+                                {{form.Last_Name}}
+                                {{form.Shipping_Address}}
+                                {{form.Shipping_Address_b}}
+                                {{form.Zip}}
+                                {{form.Phone}}
+                                {{form.Alt_Phone}} 
+                                {{form.Shipping_Note}}            
+                                <p>{{form.Same_Billing_Address}}
+                                Deliver To Billing Address
+                                {{form.payment_option}}</p>
+                                <button type="submit" class="btn btn-default" name = "checkout">Procced.</button> 
+                                  
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>				
+            </div>
+    </div>
+</div>
+</section> <!--/#cart_items-->
+{%endblock%}

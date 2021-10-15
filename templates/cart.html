@@ -1,0 +1,107 @@
+{%extends 'base.html'%} 
+{%block content%}
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Item</td>
+                        <td class="description"></td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for productList in object.items.all%}
+                    <tr>
+                        <td class="cart_product">
+                            <a href=""><img src="{{productList.item.Img.url}}" alt=""></a>
+                        </td>
+                        <td class="cart_description">
+                            <h4><a href="">{{productList.item.ProductTitle}}</a></h4>
+                            <p>ID:PP00{{productList.item.ProductId}}</p>
+                        </td>
+                        <td class="cart_price">
+                            <p>${{productList.item.Price}}</p>
+                        </td>
+                        <td class="cart_quantity">
+                            <div class="cart_quantity_button">
+                                <a class="cart_quantity_up" href="{% url 'titanCart:increment-quantity' productList.item.slug %}"> + </a>
+                                <input class="cart_quantity_input" type="text" name="quantity" value="{{productList.quantity}}" autocomplete="off" size="3">
+                                <a class="cart_quantity_down" href="{% url 'titanCart:decrement-quantity' productList.item.slug %}"> - </a>
+                            </div>
+                        </td>
+                        {% if productList.item.discount_price %}
+                        <td class="cart_total">
+                            <p class="cart_total_price">${{ productList.get_price}}</p>
+                            <span  class="badge badge-pill badge-default">You Save ${{productList.saved_price}}</span>
+                        </td>
+                        {% else %}
+                        <td class="cart_total">
+                            <p class="cart_total_price">${{ productList.get_price  }}</p>
+                        </td>
+                        {%endif%}
+                        <td class="cart_delete">
+                            <a class="cart_quantity_delete" href="{% url 'titanCart:remove-from-cart' productList.item.slug %}"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'titanCart:index'%}"><h3>Your Cart is empty.Add Some Items Please.</h3></a> </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section> <!--/#cart_items-->
+{% if object.get_total_price%}
+<section id="do_action">
+    <div class="container">
+        <div class="heading">
+            <h3>Here Is Your Reciept!</h3>
+            <p>Click Checkout To confirm your Order.</p>
+        </div>
+            <div class="col-sm-6">
+                <div class="total_area">
+                    <ul>
+                        <li>Cart Sub Total <span>${{object.get_total_price}}</span></li>
+                        <li>Tax <span>$0</span></li>
+                        <li>Shipping Cost <span>${{object.get_Delivery}}</span></li>
+                        <li>Total <span>${{object.delivered_price}}</span></li>
+                    </ul>
+                        <a class="btn btn-default check_out" href="{% url 'titanCart:index'%}">Continue Shopping</a>
+                        <a class="btn btn-default check_out" href="{% url 'titanCart:checkout'%}">Check Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
+{%else%}
+<section id="do_action">
+    <div class="container">
+        <div class="heading">
+            <h3>Here Is Your Reciept!</h3>
+            <p>You don't have any items in your Cart.</p>
+        </div>
+            <div class="col-sm-6">
+                <div class="total_area">
+                        <a class="btn btn-default check_out" href="{% url 'titanCart:index'%}">Go Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
+{%endif%}
+
+{%endblock%}

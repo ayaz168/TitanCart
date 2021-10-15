@@ -1,0 +1,308 @@
+{%extends 'base.html'%} {%block content%}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="left-sidebar">
+          <h2>Category</h2>
+          <div class="panel-group category-products" id="accordian">
+            <!--category-productsr-->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordian"
+                    href="#electronicsStuff"
+                  >
+                    <span class="badge pull-right"
+                      ><i class="fa fa-plus"></i
+                    ></span>
+                    Electronics
+                  </a>
+                </h4>
+              </div>
+              <div id="electronicsStuff" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <ul>
+                    <li><a href="{% url 'titanCart:catElectronicsindex'%}">Mobile Phones </a></li>
+                    <li><a href="{% url 'titanCart:catElectronicsindex'%}">Computers and Laptops </a></li>
+                    <li><a href="{% url 'titanCart:catElectronicsindex'%}">Tablets </a></li>
+                    <li><a href="{% url 'titanCart:catElectronicsindex'%}">Charger and Headphones</a></li>
+                    <li><a href="{% url 'titanCart:catElectronicsindex'%}">Gaming </a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catEntairtnmentindex'%}">Entairtnment</a></h4>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catHealthandFitnessindex'%}">Health and Fitness</a></h4>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordian"
+                    href="#mens"
+                  >
+                    <span class="badge pull-right"
+                      ><i class="fa fa-plus"></i
+                    ></span>
+                    Men's
+                  </a>
+                </h4>
+              </div>
+              <div id="mens" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <ul>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Fendi</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Guess</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Valentino</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Dior</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Versace</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Armani</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Prada</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Dolce and Gabbana</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Chanel</a></li>
+                    <li><a href="{% url 'titanCart:catMens_Clothesindex'%}">Gucci</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordian"
+                    href="#womens"
+                  >
+                    <span class="badge pull-right"
+                      ><i class="fa fa-plus"></i
+                    ></span>
+                    Women's
+                  </a>
+                </h4>
+              </div>
+              <div id="womens" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <ul>
+                    <li><a href="{% url 'titanCart:catWomens_Clothesindex'%}">Fendi</a></li>
+                    <li><a href="{% url 'titanCart:catWomens_Clothesindex'%}">Guess</a></li>
+                    <li><a href="{% url 'titanCart:catWomens_Clothesindex'%}">Valentino</a></li>
+                    <li><a href="{% url 'titanCart:catWomens_Clothesindex'%}">Dior</a></li>
+                    <li><a href="{% url 'titanCart:catWomens_Clothesindex'%}">Versace</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catKids_Clothesindex'%}">Kids Clothes</a></h4>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catSecurityindex'%}">Security</a></h4>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catWatchesindex'%}">Watches</a></h4>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="{% url 'titanCart:catShoesindex'%}">Shoes</a></h4>
+              </div>
+            </div>
+          </div>
+          <!--/category-products-->
+
+          <div class="price-range">
+            <!--price-range-->
+            <h2>Price Range</h2>
+            <div class="well text-center">
+              <input
+                type="text"
+                class="span2"
+                value=""
+                data-slider-min="0"
+                data-slider-max="600"
+                data-slider-step="5"
+                data-slider-value="[250,450]"
+                id="sl2"
+              /><br />
+              <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+            </div>
+          </div>
+          <!--/price-range-->
+        </div>
+      </div>
+      <div class="category-tab">
+        <!--category-tab-->
+        <div class="col-sm-9 padding-right">
+          <h2 class="title text-center">Products</h2>
+          {% for i in object_list%}
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="{{i.Img.url}}" alt="" />
+                  <p>
+                    <strong>
+                      <a href="{{i.get_absolute_url}}" class="text-muted">{{i.ProductTitle}}</a>
+                    </strong>
+                  </p>
+                  <h2>${{i.Price}}</h2>
+                  {% if user.is_authenticated%}
+                  <a href="{{i.add_to_cart_url}}" class="btn btn-default add-to-cart"
+                    ><i class="fa fa-shopping-cart"></i>Add to cart</a
+                    >
+                    {%endif%}
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+            {% if is_paginated %}
+            <ul class="pagination">
+              {% if page_obj.has_previous %}
+              <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+              {% endif %}
+              <li class="active"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+              {% if page_obj.has_next %}
+              <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+              {% endif %}
+            </ul>
+            {% endif %}
+
+          <!--Pagination-->
+        
+
+        <div class="col-sm-9 padding-left">
+          <div class="features_items">
+            <!--features_items-->
+            <h2 class="title text-center">Features Items</h2>
+            {% for i in featured.productIDs.all%}
+            <div class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img src="{{i.Img.url}}" alt="" />
+                    <h2>${{i.Price}}</h2>
+                    <p>{{i.Desc}}</p>
+                    {% if user.is_authenticated%}
+                      <a href="{{i.add_to_cart_url}}" class="btn btn-default add-to-cart"
+                        ><i class="fa fa-shopping-cart"></i>Add to cart</a
+                      >
+                      {%else%}
+                      <a href="{% url 'titanCart:signup'%}" class="btn btn-default add-to-cart"
+                      ><i class="fa fa-shopping-cart"></i>Login</a
+                    >
+                      {% endif %}
+                  </div>
+                  <div class="product-overlay">
+                    <div class="overlay-content">
+                      <h2>${{i.Price}}</h2>
+                      <p>{{i.Desc}}</p>
+                      {% if user.is_authenticated%}
+                      <a href="{{i.add_to_cart_url}}" class="btn btn-default add-to-cart"
+                        ><i class="fa fa-shopping-cart"></i>Add to cart</a
+                      >
+                      {%else%}
+                      <a href="{% url 'titanCart:signup'%}" class="btn btn-default add-to-cart"
+                      ><i class="fa fa-shopping-cart"></i>Login</a
+                    >
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class="choose">
+                  <ul class="nav nav-pills nav-justified">
+                    <li>
+                      <a href="{{i.add_to_cart_url}}"
+                        ><i class="fa fa-plus-square"></i>Add to wishlist</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-plus-square"></i>Add to compare</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+          <!--features_items-->
+
+          <div class="recommended_items">
+            <!--recommended_items-->
+            <h2 class="title text-center">recommended items</h2>
+
+            <div
+              id="recommended-item-carousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="item active">
+                  {% for i in recomended.productIDs.all%}
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="{{i.Img.url}}" alt="" />
+                          <h2>${{i.Price}}</h2>
+                          <p>{{i.Desc}}</p>
+                          {% if user.is_authenticated%}
+                          <a href="{{i.add_to_cart_url}}" class="btn btn-default add-to-cart"
+                            ><i class="fa fa-shopping-cart"></i>Add to cart</a
+                          >
+                          {%else%}
+                          <a href="{% url 'titanCart:signup'%}" class="btn btn-default add-to-cart"
+                          ><i class="fa fa-shopping-cart"></i>Login</a
+                        >
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {%endfor%}
+                </div>
+              </div>
+              <a
+                class="left recommended-item-control"
+                href="#recommended-item-carousel"
+                data-slide="prev"
+              >
+                <i class="fa fa-angle-left"></i>
+              </a>
+              <a
+                class="right recommended-item-control"
+                href="#recommended-item-carousel"
+                data-slide="next"
+              >
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!--/recommended_items-->
+        </div>
+        <!--/category-tab and all item tabs-->
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

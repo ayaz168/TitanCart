@@ -1,0 +1,217 @@
+{%extends 'noSearchBase.html'%} {%block content%}
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="left-sidebar">
+					<h2>Category</h2>
+					<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										Electronics
+									</a>
+								</h4>
+							</div>
+							<div id="sportswear" class="panel-collapse collapse">
+								<div class="panel-body">
+									<ul>
+										<li><a href="#">Mobile Phones </a></li>
+										<li><a href="#">Computers and Laptops </a></li>
+										<li><a href="#">Tablets </a></li>
+										<li><a href="#">Charger and Headphones</a></li>
+										<li><a href="#">Gaming </a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+							  <h4 class="panel-title"><a href="#">Entairtnment</a></h4>
+							</div>
+						  </div>
+						  <div class="panel panel-default">
+							<div class="panel-heading">
+							  <h4 class="panel-title"><a href="#">Health and Fitness</a></h4>
+							</div>
+						  </div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										Men's
+									</a>
+								</h4>
+							</div>
+							<div id="mens" class="panel-collapse collapse">
+								<div class="panel-body">
+									<ul>
+										<li><a href="#">Fendi</a></li>
+										<li><a href="#">Guess</a></li>
+										<li><a href="#">Valentino</a></li>
+										<li><a href="#">Dior</a></li>
+										<li><a href="#">Versace</a></li>
+										<li><a href="#">Armani</a></li>
+										<li><a href="#">Prada</a></li>
+										<li><a href="#">Dolce and Gabbana</a></li>
+										<li><a href="#">Chanel</a></li>
+										<li><a href="#">Gucci</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										Women's
+									</a>
+								</h4>
+							</div>
+							<div id="womens" class="panel-collapse collapse">
+								<div class="panel-body">
+									<ul>
+										<li><a href="">Fendi</a></li>
+										<li><a href="">Guess</a></li>
+										<li><a href="">Valentino</a></li>
+										<li><a href="">Dior</a></li>
+										<li><a href="">Versace</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a href="#">Kids Clothes</a></h4>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a href="#">Security</a></h4>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a href="#">Watches</a></h4>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a href="#">Shoes</a></h4>
+							</div>
+						</div>
+					</div><!--/category-products-->
+					
+				</div>
+			</div>
+			
+			<div class="col-sm-9 padding-right">
+				<div class="product-details"><!--product-details-->
+					<div class="col-sm-5">
+						<div class="view-product">
+							<img src="{{object.Img.url}}" alt="" />
+							<h3>ZOOM</h3>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="product-information"><!--/product-information-->
+							<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+							<h2>{{object.ProductTitle}}</h2>
+							<p>Web ID: {{object.ProductId}}</p>
+							<span>
+								<span>US ${{object.Price}}</span>
+								<label>Quantity:{{object.Qty}}</label>
+								<input type="text" value="1" />
+								{% if user.is_authenticated%}
+								<a href="{{object.add_to_cart_url}}" class="btn btn-fefault cart">
+									<i class="fa fa-shopping-cart"></i>
+									Add to cart
+								</a>
+								{%endif%}
+							</span>
+							{% if object.Qty %}
+                			<p><b>Availability:</b> In Stock</p>
+                			{% else %}
+                			<p><b>Availability:</b> Out Of Stock</p>
+                			{%endif%}
+							<p><b>Condition:</b> New</p>
+							<p><b>Brand:</b> {{object.Manufacturer}}</p>
+						</div><!--/product-information-->
+					</div>
+				</div><!--/product-details-->
+				
+				<div class="category-tab shop-details-tab"><!--category-tab-->
+					<div class="col-sm-12">
+						<ul class="nav nav-tabs">
+							<li><a href="#details" data-toggle="tab">Details</a></li>
+							<li><a href="#seeReviews" data-toggle="tab">See Reviews</a></li>
+							<li class="active"><a href="#reviews" data-toggle="tab">Submit Reviews</a></li>
+						</ul>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane fade" id="details" >
+							<span>
+								<strong>
+									<p>{{object.Desc}}</p>
+								</strong>
+							</span>
+						</div>
+						<div class="tab-pane fade" id="seeReviews" >
+							{% for i in rReviews%}
+							<span>
+								<div class="col-sm-12">
+									<div class="border-top my-3">
+									<h3>Review By: {{i.user}}</h3>
+									<h3>For:  {{object.ProductTitle}}</h3>
+									<p><b>Review : {{i.UserReview}}</b></p>
+									<b>Rating: {{i.ratingGiven}}/5 </b>
+									<h2 class="title text-center">--------------------------</h2>
+								</div>
+								</div>
+							</span>
+							{%endfor%}
+						</div>
+						<div class="tab-pane fade active in" id="reviews" >
+							{% if user.is_authenticated%}
+							<div class="col-sm-12">
+								<ul>
+									<li><a href=""><i class="fa fa-user"></i>{{self.user}}</a></li>
+									<li><a href=""><i class="fa fa-clock-o"></i>{{timezone.now}}</a></li>
+								</ul>
+								<h2>For:  {{object.ProductTitle}}
+								<p><b>Write Your Review</b></p>
+								<form method="POST">
+									{%csrf_token%}
+									<span>
+										{{rform.Email}}
+										{{rform.Ratings}}
+									</span>
+									{{rform.Review}}
+									<button type="submit" class="btn btn-default" name = "checkout">Give.</button> 
+								</form>
+							</div>
+							{%else%}
+							<div class="col-sm-12">
+								<ul>
+									<li><a href=""><i class="fa fa-user"></i>{{self.user}}</a></li>
+									<li><a href=""><i class="fa fa-clock-o"></i>{{timezone.now}}</a></li>
+								</ul>
+								<h2>For:  {{object.ProductTitle}}
+								<p><b>Please Login</b></p>
+							</div>
+							{% endif %}
+						</div>
+						
+					</div>
+				</div><!--/category-tab-->
+			</div>
+		</div>
+	</div>
+</section>
+
+{%endblock%}

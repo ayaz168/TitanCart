@@ -1,0 +1,16 @@
+Name: titanCart
+Order Id: PP00X1228
+COD::TotalPrice: 469.0
+###################################--ITEMS--###################################
+ID: 13  :  Name: Resistance Bike  :  Price: 459.00  :  Qty: 1
+################################--Delivery Info--#############################
+Recievers Title: Mr.
+Recievers Name: Ayaz Afzal
+Recievers Number: 3481512600
+Recievers Alt. Number: 3481512600
+Recievers Address: Street 58,f7, I8/3
+Islamabad
+Zip Code: 123456
+Note : call before delivering
+This is a Computer Generated Reciept
+################################--TitanCart--################################

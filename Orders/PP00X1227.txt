@@ -1,0 +1,17 @@
+Name: titanCart
+Order Id: PP00X1227
+Already Paid.Just Deliver 
+###################################--ITEMS--###################################
+ID: 5  :  Name: Samsung A71  :  Price: 340.00  :  Qty: 1
+ID: 6  :  Name: Yeezy Sneakers  :  Price: 55.00  :  Qty: 1
+################################--Delivery Info--#############################
+Recievers Title: Mr.
+Recievers Name: Ayaz Afzal
+Recievers Number: 3481512600
+Recievers Alt. Number: 3481512600
+Recievers Address: Street 58,f7, I8/3
+Islamabad
+Zip Code: 123456
+Note : checkout
+This is a Computer Generated Reciept
+################################--TitanCart--################################

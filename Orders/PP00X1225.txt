@@ -1,0 +1,18 @@
+Name: ayaz168
+Order Id: PP00X1225
+TotalPrice: 1404.5
+###################################--ITEMS--###################################
+ID: 6  :  Name: Yeezy Sneakers  :  Price: 55.00  :  Qty: 7
+ID: 2  :  Name: Apple Watch Series 5. 42mm  :  Price: 65.90  :  Qty: 5
+ID: 5  :  Name: Samsung A71  :  Price: 340.00  :  Qty: 2
+################################--Delivery Info--##############################
+Recievers Title: Mr.
+Recievers Name: Ayaz Afzal
+Recievers Number: 03481512600
+Recievers Alt. Number: 3481512600
+Recievers Address: Street 58,f7, I8/3
+Islamabad
+Zip Code: 123456
+Note : call before delivering
+This is a Computer Generated Reciept
+################################--TitanCart--################################
